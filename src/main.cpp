@@ -42,14 +42,14 @@ int main() {
   //pid.Init(0, 1, 0.0);   // use Integral portion
   //pid.Init(0, 0, 1);     // use Differential portion
 
-  //pid.Init(0.5, 0.0, 0.0);   // try_1: overshooting
-  //pid.Init(0.25, 0.0, 0.0);  // try_2: overshooting
-  //pid.Init(0.15, 0.0, 0.0); // try_3: following the road better now
-  //pid.Init(0.15, 0.0, 1);   // try_4: add D to overcome the overshooting
-  //pid.Init(0.15, 0.0, 2);   // try_5: increse D overcome the overshooting
-  //pid.Init(0.15, 0, 3); // try_7: increse P to steer faster
-  //pid.Init(0.15, 0.0001, 3); // try_7: increse P to steer faster
-  pid.Init(0.15, 0.0005, 3); // try_7: increse P to steer faster
+  //pid.Init(0.5, 0.0, 0.0);    // try_1: overshooting
+  //pid.Init(0.25, 0.0, 0.0);   // try_2: overshooting
+  //pid.Init(0.15, 0.0, 0.0);   // try_3: following the road better now
+  //pid.Init(0.15, 0.0, 1);     // try_4: add D to overcome the overshooting
+  //pid.Init(0.15, 0.0, 2);     // try_5: increse D 
+  //pid.Init(0.15, 0, 3);       // try_6: increse D
+  //pid.Init(0.15, 0.0001, 3);  // try_7: add I to restrict the car drifting away from center of the lane
+  pid.Init(0.15, 0.0005, 3);    // try_8: increse I
 
 
   
