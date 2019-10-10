@@ -38,6 +38,22 @@ int main() {
    * TODO: Initialize the pid variable.
    */
 
+  //pid.Init(1, 0.0, 0.0); // use Proportional portion
+  //pid.Init(0, 1, 0.0);   // use Integral portion
+  //pid.Init(0, 0, 1);     // use Differential portion
+
+  //pid.Init(0.5, 0.0, 0.0);   // try_1: overshooting
+  //pid.Init(0.25, 0.0, 0.0);  // try_2: overshooting
+  //pid.Init(0.15, 0.0, 0.0); // try_3: following the road better now
+  //pid.Init(0.15, 0.0, 1);   // try_4: add D to overcome the overshooting
+  //pid.Init(0.15, 0.0, 2);   // try_5: increse D overcome the overshooting
+  //pid.Init(0.15, 0, 3); // try_7: increse P to steer faster
+  //pid.Init(0.15, 0.0001, 3); // try_7: increse P to steer faster
+  pid.Init(0.15, 0.0005, 3); // try_7: increse P to steer faster
+
+
+  
+
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
                      uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -63,6 +79,11 @@ int main() {
            * NOTE: Feel free to play around with the throttle and speed.
            *   Maybe use another PID controller to control the speed!
            */
+          pid.UpdateError(cte);
+          // need steer_value normalization here or in pid class.
+          steer_value = - pid.TotalError();
+          double te = pid.TotalError();
+          std::cout << "pid.TotalError() is : "<< te << std::endl;
           
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value 
