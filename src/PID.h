@@ -35,9 +35,10 @@ class PID {
   /**
    * PID Errors
    */
-  double p_error;
-  double i_error;
-  double d_error;
+  double p_error; //Proportion
+  double i_error; //Differential
+  double d_error; //Integral
+  double prev_cte;//Cross-track error
 
   /**
    * PID Coefficients
