@@ -4,11 +4,11 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 
 ## Overview
----
+
 The purpose of this project was to implement a PID controller to control a car in Udacity's simulator. The simulator sends cross-track error(CTE), speed and angle to the PID controller(PID) using WebSocket.  And PID controller(PID) receives the steering angle ([-1, 1] normalized) and the throttle to drive the car reliably around the simulator track.
 
 ## PID effections
----
+
 1. Proportional(P) based controller steer the car toward the center line (against the cross-track error). If used along, the car overshoots the central line very easily and go out of the road very quickly. This video is the example of using P controller only.
 
 2. Integral(I) based controller eliminate a possible bias on the controlled system by accounting the past values of the error that could prevent the error to be eliminated. If used along, it makes the car to go in circles. This video is the example of using I controller only.
@@ -16,7 +16,7 @@ The purpose of this project was to implement a PID controller to control a car i
 3. Differential(D) based controller helps to counteract the proportional trend to overshoot the center line by smoothing the approach to it. This video is the example of using D controller only.
 
 ## How to tune the parameters?
----
+
 The parameters were chosen manually by try and error.
 
 Step1. I started with Proportional(P) cause it steer the car toward to center, I started from 1 then reduced it gradually until the car following the road better. The final P is 0.15.
@@ -26,7 +26,7 @@ Step3. I turned Integral(I) from 0 to 0.0005 so the car can drive smoothly.
 The final parameters where [P: 0.15, I: 0.0005, D: 3].
 
 ## Possible Improvements
----
+
 Sebastian Thrun demonstrated how to turn parameters automatically by Twiddle algorithm. I will try to implement twiddle in the future.
 
 <img src="report/twiddle.jpg" width="480" alt="Combined Image" />
