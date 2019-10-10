@@ -23,7 +23,7 @@ The parameters were chosen manually by try and error.
 * Step2. I added the Differential(D) to overcome the overshooting. I started from 1 then increased to 3. The car finally could drive around the track.
 * Step3. I turned Integral(I) from 0 to 0.0005 so the car can drive smoothly.
 
-The final parameters where [P: 0.15, I: 0.0005, D: 3].
+The final parameters were [P: 0.15, I: 0.0005, D: 3].
 This is the final [video](https://youtu.be/MIpe3QhXvLE).
 
 ## Possible Improvements
