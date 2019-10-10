@@ -3,6 +3,35 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Overview
+---
+The purpose of this project was to implement a PID controller to control a car in Udacity's simulator. The simulator sends cross-track error(CTE), speed and angle to the PID controller(PID) using WebSocket.  And PID controller(PID) receives the steering angle ([-1, 1] normalized) and the throttle to drive the car reliably around the simulator track.
+
+## PID effections
+---
+1. Proportional(P) based controller steer the car toward the center line (against the cross-track error). If used along, the car overshoots the central line very easily and go out of the road very quickly. This video is the example of using P controller only.
+
+2. Integral(I) based controller eliminate a possible bias on the controlled system by accounting the past values of the error that could prevent the error to be eliminated. If used along, it makes the car to go in circles. This video is the example of using I controller only.
+
+3. Differential(D) based controller helps to counteract the proportional trend to overshoot the center line by smoothing the approach to it. This video is the example of using D controller only.
+
+## How to tune the parameters?
+---
+The parameters were chosen manually by try and error.
+
+Step1. I started with Proportional(P) cause it steer the car toward to center, I started from 1 then reduced it gradually until the car following the road better. The final P is 0.15.
+Step2. I added the Differential(D) to overcome the overshooting. I started from 1 then increased to 3. The car finally could drive around the track.
+Step3. I turned Integral(I) from 0 to 0.0005 so the car can drive smoothly.
+
+The final parameters where [P: 0.15, I: 0.0005, D: 3].
+
+## Possible Improvements
+---
+Sebastian Thrun demonstrated how to turn parameters automatically by Twiddle algorithm. I will try to implement twiddle in the future.
+
+<img src="report/twiddle.jpg" width="480" alt="Combined Image" />
+
+
 ## Dependencies
 
 * cmake >= 3.5
@@ -58,41 +87,3 @@ cmake and make!
 More information is only accessible by people who are already enrolled in Term 2
 of CarND. If you are enrolled, see [the project page](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/f1820894-8322-4bb3-81aa-b26b3c6dcbaf/lessons/e8235395-22dd-4b87-88e0-d108c5e5bbf4/concepts/6a4d8d42-6a04-4aa6-b284-1697c0fd6562)
 for instructions and the project rubric.
-
-## Hints!
-
-* You don't have to follow this directory structure, but if you do, your work
-  will span all of the .cpp files here. Keep an eye out for TODOs.
-
-## Call for IDE Profiles Pull Requests
-
-Help your fellow students!
-
-We decided to create Makefiles with cmake to keep this project as platform
-agnostic as possible. Similarly, we omitted IDE profiles in order to we ensure
-that students don't feel pressured to use one IDE or another.
-
-However! I'd love to help people get up and running with their IDEs of choice.
-If you've created a profile for an IDE that you think other students would
-appreciate, we'd love to have you add the requisite profile files and
-instructions to ide_profiles/. For example if you wanted to add a VS Code
-profile, you'd add:
-
-* /ide_profiles/vscode/.vscode
-* /ide_profiles/vscode/README.md
-
-The README should explain what the profile does, how to take advantage of it,
-and how to install it.
-
-Frankly, I've never been involved in a project with multiple IDE profiles
-before. I believe the best way to handle this would be to keep them out of the
-repo root to avoid clutter. My expectation is that most profiles will include
-instructions to copy files to a new location to get picked up by the IDE, but
-that's just a guess.
-
-One last note here: regardless of the IDE used, every submitted project must
-still be compilable with cmake and make./
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
