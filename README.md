@@ -1,7 +1,7 @@
 # CarND-Controls-PID
-Self-Driving Car Engineer Nanodegree Program
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
----
+
 
 ## Overview
 
@@ -19,9 +19,9 @@ The purpose of this project was to implement a PID controller to control a car i
 
 The parameters were chosen manually by try and error.
 
-Step1. I started with Proportional(P) cause it steer the car toward to center, I started from 1 then reduced it gradually until the car following the road better. The final P is 0.15.
-Step2. I added the Differential(D) to overcome the overshooting. I started from 1 then increased to 3. The car finally could drive around the track.
-Step3. I turned Integral(I) from 0 to 0.0005 so the car can drive smoothly.
+* Step1. I started with Proportional(P) cause it steer the car toward to center, I started from 1 then reduced it gradually until the car following the road better. The final P is 0.15.
+* Step2. I added the Differential(D) to overcome the overshooting. I started from 1 then increased to 3. The car finally could drive around the track.
+* Step3. I turned Integral(I) from 0 to 0.0005 so the car can drive smoothly.
 
 The final parameters where [P: 0.15, I: 0.0005, D: 3].
 
