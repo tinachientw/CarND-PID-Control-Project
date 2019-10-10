@@ -5,7 +5,7 @@
 
 ## Overview
 
-The purpose of this project was to implement a PID controller to control a car in Udacity's simulator. The simulator sends cross-track error(CTE), speed and angle to the PID controller(PID) using WebSocket.  And PID controller(PID) receives the steering angle ([-1, 1] normalized) and the throttle to drive the car reliably around the simulator track.
+The purpose of this project was to implement a PID controller to control a car in Udacity's simulator. The simulator sends cross-track error(CTE), speed and angle to the PID controller using WebSocket.  And PID controller receives the steering angle ([-1, 1] normalized) and the throttle to drive the car reliably around the simulator track.
 
 ## PID effections
 
