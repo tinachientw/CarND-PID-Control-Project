@@ -29,7 +29,7 @@ The final parameters where [P: 0.15, I: 0.0005, D: 3].
 
 Sebastian Thrun demonstrated how to turn parameters automatically by Twiddle algorithm. I will try to implement twiddle in the future.
 
-<img src="report/twiddle.jpg" width="480" alt="Combined Image" />
+<img src="outputs/twiddle.png" width="480" alt="Combined Image" />
 
 
 ## Dependencies
